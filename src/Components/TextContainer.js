@@ -3,8 +3,8 @@ import React, { useState } from 'react';
 export default function TextContainer() {
     const[text, setText] = useState("Enter your text here");
     const[style, setMyStyle] = useState({
-        color : "white",
-        backgroundColor : "black"
+        color : "black",
+        backgroundColor : "white"
     })
 
     const handleOnChange = (event) =>{
@@ -24,15 +24,15 @@ export default function TextContainer() {
     }
 
     const enableDarkMode = () =>{
-       if(style.color ==="white") {
-        setMyStyle({
-            color : "black",
-            backgroundColor : "white"
-        });
-       } else {
+       if(style.color ==="black") {
         setMyStyle({
             color : "white",
             backgroundColor : "black"
+        });
+       } else {
+        setMyStyle({
+            color : "black",
+            backgroundColor : "white"
         });
        }
 
@@ -43,7 +43,7 @@ export default function TextContainer() {
   return (
     <>  
     <div style={style}>
-    <div classNameName="my-3" >
+    <div className="my-3" >
         <div className="mb-3">
                 <div className="mb-3  text-center">
                 <h1>Hi, I am your Transformer... </h1>
