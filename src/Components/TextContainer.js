@@ -2,6 +2,10 @@ import React, { useState } from 'react';
 
 export default function TextContainer() {
     const[text, setText] = useState("Enter your text here");
+    const[style, setMyStyle] = useState({
+        color : "white",
+        backgroundColor : "black"
+    })
 
     const handleOnChange = (event) =>{
         setText(event?.target?.value);
@@ -19,10 +23,27 @@ export default function TextContainer() {
         setText("");
     }
 
+    const enableDarkMode = () =>{
+       if(style.color ==="white") {
+        setMyStyle({
+            color : "black",
+            backgroundColor : "white"
+        });
+       } else {
+        setMyStyle({
+            color : "white",
+            backgroundColor : "black"
+        });
+       }
+
+    }
+
+
 
   return (
     <>  
-     <div classNameName="my-3">
+    <div style={style}>
+    <div classNameName="my-3" >
         <div className="mb-3">
                 <div className="mb-3  text-center">
                 <h1>Hi, I am your Transformer... </h1>
@@ -32,6 +53,7 @@ export default function TextContainer() {
         <button className="btn btn-primary mx-2" onClick={handleUppercase}>Transform to Uppercase</button>
         <button className="btn btn-primary mx-2" onClick={handleLowercase}>Transform to Lowercase</button>
         <button className="btn btn-primary mx-2" onClick={cleartext}>Clear Text</button>
+        <button className="btn btn-primary mx-2" onClick={enableDarkMode}>Enable dark Mode</button>
     </div>
     <div className="my-3">
         <h2>Analyzer</h2>
@@ -40,6 +62,8 @@ export default function TextContainer() {
         <h2>Summary</h2>
         <span className="my-1">{text}</span>
     </div>
+    </div>
+     
     </>
    
   )
