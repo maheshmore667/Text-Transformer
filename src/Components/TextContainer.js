@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-export default function TextContainer() {
+export default function TextContainer(props) {
     const[text, setText] = useState("Enter your text here");
     const[style, setMyStyle] = useState({
         color : "black",
@@ -25,12 +25,13 @@ export default function TextContainer() {
     }
 
     const enableDarkMode = () =>{
-       if(style.color ==="black") {
+       if(style.color === "black") {
         setMyStyle({
             color : "white",
-            backgroundColor : "black"
+            backgroundColor : "#042743"
         });
         setButtonText("DisableDarkMode");
+        
        } else {
         setMyStyle({
             color : "black",
