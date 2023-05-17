@@ -35,7 +35,10 @@ export default function TextContainer() {
             backgroundColor : "white"
         });
        }
+    }
 
+    const copyText = () =>{
+        navigator.clipboard.writeText(text);
     }
 
 
@@ -47,13 +50,14 @@ export default function TextContainer() {
         <div className="mb-3">
                 <div className="mb-3  text-center">
                 <h1>Hi, I am your Transformer... </h1>
-                <textarea className="form-control" value = {text} id="exampleFormControlTextarea1" rows="8" onChange={handleOnChange}></textarea>
+                <textarea className="form-control" value = {text} id="textToTransform" rows="8" onChange={handleOnChange}></textarea>
                 </div>
         </div>
-        <button className="btn btn-primary mx-2" onClick={handleUppercase}>Transform to Uppercase</button>
-        <button className="btn btn-primary mx-2" onClick={handleLowercase}>Transform to Lowercase</button>
-        <button className="btn btn-primary mx-2" onClick={cleartext}>Clear Text</button>
-        <button className="btn btn-primary mx-2" onClick={enableDarkMode}>Enable dark Mode</button>
+        <button className="btn btn-primary mx-2 my-1" onClick={handleUppercase}>Transform to Uppercase</button>
+        <button className="btn btn-primary mx-2 my-1" onClick={handleLowercase}>Transform to Lowercase</button>
+        <button className="btn btn-primary mx-2 my-1" onClick={cleartext}>Clear Text</button>
+        <button className="btn btn-primary mx-2 my-1" onClick={enableDarkMode}>Enable dark Mode</button>
+        <button className="btn btn-primary mx-2 my-1" onClick={copyText}>Copy text</button>
     </div>
     <div className="my-3">
         <h2>Analyzer</h2>
