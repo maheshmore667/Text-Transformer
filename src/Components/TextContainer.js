@@ -5,7 +5,8 @@ export default function TextContainer() {
     const[style, setMyStyle] = useState({
         color : "black",
         backgroundColor : "white"
-    })
+    });
+    const[buttonText, setButtonText] = useState("EnableDarkMode");
 
     const handleOnChange = (event) =>{
         setText(event?.target?.value);
@@ -29,11 +30,13 @@ export default function TextContainer() {
             color : "white",
             backgroundColor : "black"
         });
+        setButtonText("DisableDarkMode");
        } else {
         setMyStyle({
             color : "black",
             backgroundColor : "white"
         });
+        setButtonText("EnableDarkMode");
        }
     }
 
@@ -56,7 +59,7 @@ export default function TextContainer() {
         <button className="btn btn-primary mx-2 my-1" onClick={handleUppercase}>Transform to Uppercase</button>
         <button className="btn btn-primary mx-2 my-1" onClick={handleLowercase}>Transform to Lowercase</button>
         <button className="btn btn-primary mx-2 my-1" onClick={cleartext}>Clear Text</button>
-        <button className="btn btn-primary mx-2 my-1" onClick={enableDarkMode}>Enable dark Mode</button>
+        <button className="btn btn-primary mx-2 my-1" onClick={enableDarkMode}>{buttonText}</button>
         <button className="btn btn-primary mx-2 my-1" onClick={copyText}>Copy text</button>
     </div>
     <div className="my-3">
