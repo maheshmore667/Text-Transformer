@@ -10,18 +10,22 @@ export default function TextContainer(props) {
 
     const handleOnChange = (event) =>{
         setText(event?.target?.value);
+       
     }
 
     const handleUppercase = () =>{
         setText(text?.toUpperCase());
+        props.showAlert("Text changed to Uppercase",  " Success!!");
     }
 
     const handleLowercase = () =>{
         setText(text?.toLowerCase());
+        props.showAlert("Text changed to Lowercase",  " Success!!");
     }
 
     const cleartext = () =>{
         setText("");
+        props.showAlert("Text cleared",  " Success!!");
     }
 
     const enableDarkMode = () =>{
@@ -43,6 +47,11 @@ export default function TextContainer(props) {
 
     const copyText = () =>{
         navigator.clipboard.writeText(text);
+        props.showAlert("Text copied to clipboard",  " Success!!");
+    }
+
+    const messageByMahesh = () =>{
+       props.showAlert("I strongly feel You are the one I wanted to find, would you like to be mine?",  " Feeling Curious");
     }
 
 
@@ -62,6 +71,7 @@ export default function TextContainer(props) {
         <button className="btn btn-primary mx-2 my-1" onClick={cleartext}>Clear Text</button>
         <button className="btn btn-primary mx-2 my-1" onClick={enableDarkMode}>{buttonText}</button>
         <button className="btn btn-primary mx-2 my-1" onClick={copyText}>Copy text</button>
+        <button className="btn btn-primary mx-2 my-1" onClick={messageByMahesh}>Message by Mahesh</button>
     </div>
     <div className="my-3">
         <h2>Analyzer</h2>
