@@ -75,8 +75,8 @@ export default function TextContainer(props) {
     </div>
     <div className="my-3">
         <h2>Analyzer</h2>
-        <p><span><b>{text.length === 0 ? 0 : text?.split(" ").length}</b> words and <b>{text.length}</b> characters</span></p>
-        <p><span><b>{0.008 * text?.split(" ").length}</b> minutes read</span></p>
+        <p><span><b>{text.length === 0 ? 0 : text?.split(" ").filter(word => word !== '').length}</b> words and <b>{text.length}</b> characters</span></p>
+        <p><span><b>{0.008 * text?.split(" ").filter(word => word !== '').length}</b> minutes read</span></p>
         <h2>Summary</h2>
         <span className="my-1">{text}</span>
     </div>
