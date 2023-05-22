@@ -3,6 +3,12 @@ import './App.css';
 import Navbar from './Components/Navbar';
 import TextContainer from './Components/TextContainer';
 import Alert from './Components/Alert';
+import About from './Components/About';
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch
+} from "react-router-dom";
 
 function App() {
   const[mode, setMode] = useState("dark");
@@ -27,13 +33,25 @@ function App() {
   }
 
   return (
-   <>
+    <>
+    <Router>
     <Navbar ownerName="Mahesh"  mode ={mode} toggleMode={toggleMode}/>
     <Alert alert ={alert} />
-    <div className="container my-3">
+   
+    <Switch>
+      <div className="container my-3">
+      <Route exact path="/">
       <TextContainer  mode ={mode} showAlert = {showAlert}/>
-    </div>
-   </>
+      </Route>
+      <Route exact path="/about">
+        <About />
+      </Route>
+      </div>
+    </Switch>
+   
+   </Router>
+    </>
+ 
   );
 }
 
