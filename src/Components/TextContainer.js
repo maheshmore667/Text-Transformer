@@ -15,17 +15,26 @@ export default function TextContainer(props) {
 
     const handleUppercase = () =>{
         setText(text?.toUpperCase());
-        props.showAlert("Text changed to Uppercase",  " Success!!");
+        if(text?.length > 0) {
+            props.showAlert("Text changed to Uppercase",  " Success!!");
+        }
+       
     }
 
     const handleLowercase = () =>{
         setText(text?.toLowerCase());
-        props.showAlert("Text changed to Lowercase",  " Success!!");
+        if(text?.length > 0) {
+            props.showAlert("Text changed to Lowercase",  " Success!!");
+        }
+      
     }
 
     const cleartext = () =>{
         setText("");
-        props.showAlert("Text cleared",  " Success!!");
+        if(text?.length > 0) {
+            props.showAlert("Text cleared",  " Success!!");
+        }
+        
     }
 
     const enableDarkMode = () =>{
@@ -67,7 +76,7 @@ export default function TextContainer(props) {
                 </div>
         </div>
         <button className="btn btn-primary mx-2 my-1" onClick={handleUppercase}>Transform to Uppercase</button>
-        <button className="btn btn-primary mx-2 my-1" onClick={handleLowercase}>Transform to Lowercase</button>
+    <button className="btn btn-primary mx-2 my-1" onClick={handleLowercase}>Transform to Lowercase</button>
         <button className="btn btn-primary mx-2 my-1" onClick={cleartext}>Clear Text</button>
         <button className="btn btn-primary mx-2 my-1" onClick={enableDarkMode}>{buttonText}</button>
         <button className="btn btn-primary mx-2 my-1" onClick={copyText}>Copy text</button>
