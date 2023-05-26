@@ -7,7 +7,6 @@
 }
 .about-us{
   height: 85vh;
-  width: 100%;
   padding: 90px 0;
   background: #ddd;
 }
@@ -24,9 +23,7 @@
   align-items: center;
   justify-content: space-around;
 }
-.text{
-  width: 540px;
-}
+
 .text h2{
   font-size: 90px;
   font-weight: 600;

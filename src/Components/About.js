@@ -5,11 +5,12 @@ import Mahesh from "../Assets/MAHESH.jpg"
 
 export default function About() {
   return (
-    <section className="about-us">
-    <div className="about">
+    <section className="col-12 d-flex flex-column">
+    <div className="col-12 d-flex justify-content-center">
       <img src={Mahesh} className="pic" alt=""/>
-      <div className="text">
-        <h2>About Me</h2>
+    </div>
+    <div className="text col-12 text-center my-2">
+        <h3>About Me</h3>
         <h5>MEAN && MERN Developer & <span>Technical Author</span></h5>
           <p>My name is Mahesh More. I am  MEAN and MERN stack developer having total experience of 4+ years.</p>
           <p>Sweet and simple intro I guess!!</p>
@@ -17,7 +18,6 @@ export default function About() {
         <Link to="/" className="hire">Hire Me</Link>
         </div>
       </div>
-    </div>
   </section>
   )
 }
