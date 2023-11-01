@@ -59,11 +59,6 @@ export default function TextContainer(props) {
         props.showAlert("Text copied to clipboard",  " Success!!");
     }
 
-    const messageByMahesh = () =>{
-       props.showAlert("I strongly feel You are the one I wanted to find, would you like to be mine?",  " Feeling Curious");
-    }
-
-
 
   return (
     <>  
@@ -76,11 +71,10 @@ export default function TextContainer(props) {
                 </div>
         </div>
         <button className="btn btn-primary mx-2 my-1" onClick={handleUppercase}>Transform to Uppercase</button>
-    <button className="btn btn-primary mx-2 my-1" onClick={handleLowercase}>Transform to Lowercase</button>
+        <button className="btn btn-primary mx-2 my-1" onClick={handleLowercase}>Transform to Lowercase</button>
         <button className="btn btn-primary mx-2 my-1" onClick={cleartext}>Clear Text</button>
         <button className="btn btn-primary mx-2 my-1" onClick={enableDarkMode}>{buttonText}</button>
         <button className="btn btn-primary mx-2 my-1" onClick={copyText}>Copy text</button>
-        <button className="btn btn-primary mx-2 my-1" onClick={messageByMahesh}>Message by Mahesh</button>
     </div>
     <div className="my-3">
         <h2>Analyzer</h2>
